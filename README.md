@@ -16,9 +16,9 @@ Dawn Song
 
 
 
-**Oblivious Multi-Party Machine Learning on Trusted Processors** — Olga Ohrimenko et al. from Utah University [pdf here](/security+in+ML/sec16_paper_ohrimenko.pdf)
+**Oblivious Multi-Party Machine Learning on Trusted Processors** — Olga Ohrimenko et al. from Utah University [pdf here](/security%20in%20ML/sec16_paper_ohrimenko.pdf)
 
-**SoK: Towards the Science of Security and Privacy in Machine Learning** — Nicolas Papernot from Pennsylvania State University [pdf here](/security+in+ML/Secure+and+Privacy+in+Machine+Learning.pdf)
+**SoK: Towards the Science of Security and Privacy in Machine Learning** — Nicolas Papernot from Pennsylvania State University [pdf here](/security%20in%20ML/Secure%20and%20Privacy%20in%20Machine%20Learning.pdf)
 
 **High Accuracy Approximation of Secure Multiparty Neural Network Training **— Daniel Ho et al. from UC Berkeley [pdf here](/security in ML/Secure Multiparty Neural Network Training.pdf)
 
@@ -36,10 +36,10 @@ Dawn Song
 
 [**Meltdown**](/side channel attack/meltdown.pdf) and [**Spectre**](/side channel attack/spectre.pdf) architecture flaws
 
-[**SHARP**](/side+channel+attack/isca17_2.pdf) defending algorithm 
+[**SHARP**](/side%20channel%20attack/isca17_2.pdf) defending algorithm 
 
 
-**How secure is your cache against side-channel a acks?** — from Princeton	[pdf here](/side+channel+attack/Micro-camera-ready-final.pdf)  with detailed side channel attack analysis
+**How secure is your cache against side-channel a acks?** — from Princeton	[pdf here](/side%20channel%20attack/Micro-camera-ready-final.pdf)  with detailed side channel attack analysis
 
 
 
@@ -71,7 +71,7 @@ Vuvuzela [SOSP’15], Stadium[SOSP'17] — [slide](/anonymity/stadium-sosp17-sli
 
 ##Software monitoring 
 
-[**PROCHLO**](/anonymity/PROCHLO.pdf) and [**Rappor**](/anonymity/Google+Rappor.pdf) from Google 
+[**PROCHLO**](/anonymity/PROCHLO.pdf) and [**Rappor**](/anonymity/Google%20Rappor.pdf) from Google 
 
 Encode shuffle analysis,  ESA architecture and its intel SGX implementation
 
