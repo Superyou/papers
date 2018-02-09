@@ -16,7 +16,7 @@ Dawn Song
 
 
 
-**Oblivious Multi-Party Machine Learning on Trusted Processors** — Olga Ohrimenko et al. from Utah University [pdf here](/papers/security in ML/sec16_paper_ohrimenko.pdf)
+**Oblivious Multi-Party Machine Learning on Trusted Processors** — Olga Ohrimenko et al. from Utah University [pdf here](./papers/security in ML/sec16_paper_ohrimenko.pdf)
 
 **SoK: Towards the Science of Security and Privacy in Machine Learning** — Nicolas Papernot from Pennsylvania State University [pdf here](./security in ML/Secure and Privacy in Machine Learning.pdf)
 
