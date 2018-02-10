@@ -20,21 +20,21 @@ Dawn Song
 
 **SoK: Towards the Science of Security and Privacy in Machine Learning** — Nicolas Papernot from Pennsylvania State University [pdf here](/security%20in%20ML/Secure%20and%20Privacy%20in%20Machine%20Learning.pdf)
 
-**High Accuracy Approximation of Secure Multiparty Neural Network Training **— Daniel Ho et al. from UC Berkeley [pdf here](/security in ML/Secure Multiparty Neural Network Training.pdf)
+**High Accuracy Approximation of Secure Multiparty Neural Network Training **— Daniel Ho et al. from UC Berkeley [pdf here](/security%20in%20ML/Secure%20Multiparty%20Neural%20Network%20Training.pdf)
 
 
 
-**Targeted Backdoor Attacks on Deep Learning Systems Using Data Poisoning ** — Xinyun Chen et al. from UC Berkeley [pdf here](/security in ML/Backdoor Attacks on Deep Learning System.pdf)
+**Targeted Backdoor Attacks on Deep Learning Systems Using Data Poisoning ** — Xinyun Chen et al. from UC Berkeley [pdf here](/security%20in%20ML/Backdoor%20Attacks%20on%20Deep%20Learning%20System.pdf)
 
 
 
-**Opaque: An Oblivious and Encrypted Distributed Analytics Platform** — Wenting Zheng from UC Berkeley  [pdf here](./security in ML/nsdi17-zheng.pdf)
+**Opaque: An Oblivious and Encrypted Distributed Analytics Platform** — Wenting Zheng from UC Berkeley  [pdf here](/security%20in%20ML/nsdi17-zheng.pdf)
 
 
 
 ##Side Channel Attacks
 
-[**Meltdown**](/side channel attack/meltdown.pdf) and [**Spectre**](/side channel attack/spectre.pdf) architecture flaws
+[**Meltdown**](/side%20channel%20attack/meltdown.pdf) and [**Spectre**](/side%20channel%20attack/spectre.pdf) architecture flaws
 
 [**SHARP**](/side%20channel%20attack/isca17_2.pdf) defending algorithm 
 
@@ -91,23 +91,37 @@ So ware-based Gate-level Information Flow Security for IoT Systems [pdf here](/i
 
 ## ORAM
 
-[**Srini**](https://people.csail.mit.edu/devadas/) from MIT
+[**Srini**](https://people.csail.mit.edu/devadas/) from MIT 
 
-**Elaine shi**
+Mainly ORAM and secure architectures
+
+
+
+[**Elaine shi**](http://elaineshi.com/) from Cornell
+
+Oblivious Computation. 
+
+ORAM architecture
+
+
+
+[**Ruby Lee**](https://www.princeton.edu/~rblee/) from Princeton 
+
+Cache side channel attacks
+
+secure cloud computing (Dos attacks)
 
 
 
 **Todd M. Austin**
 
-**Ruby Lee**
-
  
 
 ## Memory Defend 
 
-Rajeev 
+**Rajeev** 
 
-Memoty timing channels
+Memory timing channels
 
 ------
 
