@@ -55,7 +55,7 @@ Also, I add some links to those faculty who is prestigious in such fields.
 
 #### Metadata-private systems with cryptographic security limited in throughput.
 
-Dissent [OSDI’12](/anonymity/osdi12-final-115.pdf) , Riposte [S&P’15](/anonymity/Riposte.pdf) , Pung [OSDI’16](/anonymity/osdi16-angel.pdf) , Atom [SOSP’17](/anonymity/atom sosp17.pdf)
+Dissent [OSDI’12](/anonymity/osdi12-final-115.pdf) , Riposte [S&P’15](/anonymity/Riposte.pdf) , Pung [OSDI’16](/anonymity/osdi16-angel.pdf) , Atom [SOSP’17](/anonymity/atom%20sosp17.pdf)
 
 #### Throughput increased by relaxing guarantees to differential privacy
 
