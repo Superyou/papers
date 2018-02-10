@@ -12,7 +12,7 @@ Also, I add some links to those faculty who is prestigious in such fields.
 
 **Chang Liu** — Researcher on AI security; 
 
-**Dawn Song **
+**Dawn Song**
 
 
 
@@ -57,21 +57,17 @@ Also, I add some links to those faculty who is prestigious in such fields.
 
 Dissent [OSDI’12](/anonymity/osdi12-final-115.pdf) , Riposte [S&P’15](/anonymity/Riposte.pdf) , Pung [OSDI’16](/anonymity/osdi16-angel.pdf) , Atom [SOSP’17](/anonymity/atom sosp17.pdf)
 
-##### #### Throughput increased by relaxing guarantees to differential privacy.
+#### Throughput increased by relaxing guarantees to differential privacy
 
 Vuvuzela [SOSP’15], Stadium[SOSP'17] — [slide](/anonymity/stadium-sosp17-slides.pdf)
 
-
-
-##Software monitoring 
+## Software monitoring
 
 [**PROCHLO**](/anonymity/PROCHLO.pdf) and [**Rappor**](/anonymity/Google%20Rappor.pdf) from Google 
 
 Encode shuffle analysis,  ESA architecture and its intel SGX implementation
 
-
-
-##Internet of Things
+## Internet of Things
 
 **Security Analysis of Emerging Smart Home Applications"** [pdf here](/iot/smartthings_sp16.pdf)
 
