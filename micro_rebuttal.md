@@ -101,19 +101,19 @@ Good question. Indeed, the execution can be non-deterministic. But the recent at
 
 As you suggested, it might be possible for two inequivalent executions to be both safe (not vulnerable to such attacks), but it is unclear how and whether it is possible to design such a solution. So far, all existing approaches try to ensure the equivalence as the goal, no matter whether the designs indeed achieve it. As we analyzed in the paper, only InvisiSpec achieves it. 
 
-\rev{{\em Rationale for maintaining equivalent behavior. }
+
 The properties ensure the equivalence because 
-recent attacks such as Spectre~\cite{} is due to the {\em inequivalent} cache states and cache block locations between two scenarios: (1) a $SpecRd$ is executed and squashed; and (2) the $SpecRd$ does not execute. 
+recent attacks such as Spectre is due to the inequivalent cache states and cache block locations between two scenarios: (1) a SpecRd is executed and squashed; and (2) the SpecRd does not execute. 
 Therefore, maintaining the equivalence between (1) and (2) is an
 intuitive way to mitigate such attacks. 
 It might be possible for two inequivalent executions to be both not vulnerable to such attacks, but it is unclear how and whether it is possible to design such a solution.
-At this point, all existing approaches try to ensure the equivalence we formalized as the goal. }
+At this point, all existing approaches try to ensure the equivalence we formalized as the goal. 
 
 * QD2: Verifying security property automatically?
 
 If can be done, it would be very nice. But we haven't figured out how to do it. 
 
-* QD3: **Extension of proof based on two instructions to any number of instructions.**
+* QD3: Extension of proof based on two instructions to any number of instructions.
 
 We added the discussion in Section 6, page 10 Remarks. 
 
@@ -137,7 +137,7 @@ To the best of our knowledge,
 no speculative execution based attacks have been demonstrated
 by leveraging latency increase due to NoC contention. 
 
-* **QE2: Speculative buffer size and its implication on performance? **
+* QE2: Speculative buffer size and its implication on performance? 
 
 We mention it in Section 4.2. In RCP, the speculative buffer size is fixed, equals to 2×(#of  cores)×(#of LQ entries). 
 
