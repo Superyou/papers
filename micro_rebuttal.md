@@ -41,17 +41,17 @@ SpectrePrime and MeltdownPrime are side-channel attacks synthesized by the Check
 
 Explain why it is not possible. 
 
-* QB3: **Transitions among SS by NSR and then transition back to NSS correctly, any proof? **
+* QB3: **Transitions among SS by NSR and then transition back to NSS correctly, any proof?**
 
-* QB4: **More information on verification, did it end? **
+* QB4: **More information on verification, did it end?**
 
-* QB5: **More than one copy of data for a given address from each core? Memory consistency implication? **
+* QB5: **More than one copy of data for a given address from each core? Memory consistency implication?**
 
-* QB6: **Corresponding programs for load/store sequence in Figure 1. **
+* QB6: **Corresponding programs for load/store sequence in Figure 1.**
 
 
  
-* QB8: **"mostly".. **
+* QB8: **"mostly"..**
 
 * QB9: Reverse only happens at XSpec->X?
 
