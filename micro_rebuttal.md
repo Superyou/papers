@@ -37,21 +37,21 @@ Our design can defend these two attacks.
 
 SpectrePrime and MeltdownPrime are side-channel attacks synthesized by the Checkmate tool. Different from the well-known Spectre/ Meltdown attaks, SpectrePrime/MeltdownPrime exploits Prime and Probe timing channel to steal secrets. Admittedly, SpectrePrime/MeltdownPrime broadens the scope of speculative transient attacks, but RCP could still defend these. The key point is that RCP satisfy the formal security property, which will prevent any speculative loads from modifying the cache. After the cache is primed by the attacker and the speculative instructions eventually get squashed, the Specbuf will purge itself but no eviction will be appear in the primed cache lines. Thus the probe phase could know nothing from the speculative execution.
 
-* QB2: <font color="red"> Speculative load changes other lines? </font>
+* QB2: **Speculative load changes other lines?**
 
 Explain why it is not possible. 
 
-* QB3: <font color="red"> Transitions among SS by NSR and then transition back to NSS correctly, any proof? </font>
+* QB3: **Transitions among SS by NSR and then transition back to NSS correctly, any proof? **
 
-* QB4: <font color="red"> More information on verification, did it end? </font>
+* QB4: **More information on verification, did it end? **
 
-* QB5:<font color="red">  More than one copy of data for a given address from each core? Memory consistency implication? </font>
+* QB5: **More than one copy of data for a given address from each core? Memory consistency implication? **
 
-* QB6: <font color="red"> Corresponding programs for load/store sequence in Figure 1. </font>
+* QB6: **Corresponding programs for load/store sequence in Figure 1. **
 
 
  
-* QB8: <font color="red"> "mostly"..
+* QB8: **"mostly".. **
 
 * QB9: Reverse only happens at XSpec->X?
 
@@ -114,7 +114,7 @@ At this point, all existing approaches try to ensure the equivalence we formaliz
 
 If can be done, it would be very nice. But we haven't figured out how to do it. 
 
-* QD3: <font color="red"> Extension of proof based on two instructions to any number of instructions. </font>
+* QD3: **Extension of proof based on two instructions to any number of instructions.**
 
 * QD4: RCP based on RC. 
 
@@ -136,13 +136,13 @@ To the best of our knowledge,
 no speculative execution based attacks have been demonstrated
 by leveraging latency increase due to NoC contention. 
 
-* <font color="red">QE2: Speculative buffer size and its implication on performance?</font>
+* **QE2: Speculative buffer size and its implication on performance? **
 
 
 # Rev-F
 
 
-* <font color="red"> QF1: Further analysis on the "speedups"?</font>
+* **QF1: Further analysis on the "speedups"?**
 
 * QF2: Why CleanUP suffers from 4x more slowdown in Parsec than SPEC?
 
