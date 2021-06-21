@@ -8,23 +8,23 @@
 
 * QA1: 3-level cache. 
 
-We added the discussion in Section XXX. 
+We added the discussion in Section 5.7 paragraph 1 and 2. 
 
 * QA2: Non-inclusive cache. 
 
-We added the discussion in Section XXX.
+We added the discussion in Section 5.7 paragraph 3.
 
 * QA3: Potential attacks to speculative buffer. 
 
-We strengthened the discussion in Section XXX.
+We strengthened the discussion in Section 6, Security of SpecBuf.
 
 * QA4: SPEC 2017. 
 
-We added the results in Figure XXX.
+We added the results in Figure 9.
 
 * QA5: 8-core. 
 
-We added the results in Figure XXX. 
+Currently we do not have evaluation on 8 cores. This is due to our current linux kernel and image disk running Full System on Gem5 could only support up to 4 cores.   . 
 
 
 # Rev-B
@@ -33,23 +33,25 @@ Thank you for the detailed comments, in retrospect, we indeed provided too much 
 
 * QB1: SpectrePrime/MeltdownPrime. 
 
-Our design can defend these two attacks, we added the discussion in Section XXX. 
+Our design can defend these two attacks.
 
-* QB2: Speculative load changes other lines?
+SpectrePrime and MeltdownPrime are side-channel attacks synthesized by the Checkmate tool. Different from the well-known Spectre/ Meltdown attaks, SpectrePrime/MeltdownPrime exploits Prime and Probe timing channel to steal secrets. Admittedly, SpectrePrime/MeltdownPrime broadens the scope of speculative transient attacks, but RCP could still defend these. The key point is that RCP satisfy the formal security property, which will prevent any speculative loads from modifying the cache. After the cache is primed by the attacker and the speculative instructions eventually get squashed, the Specbuf will purge itself but no eviction will be appear in the primed cache lines. Thus the probe phase could know nothing from the speculative execution.
+
+* QB2: <font color="red"> Speculative load changes other lines? <\font>
 
 Explain why it is not possible. 
 
-* QB3: Transitions among SS by NSR and then transition back to NSS correctly, any proof?
+* QB3: <font color="red"> Transitions among SS by NSR and then transition back to NSS correctly, any proof? <\font>
 
-* QB4: More information on verification, did it end?
+* QB4: <font color="red"> More information on verification, did it end? <\font>
 
-* QB5: More than one copy of data for a given address from each core? Memory consistency implication?
+* QB5:<font color="red">  More than one copy of data for a given address from each core? Memory consistency implication? <\font>
 
-* QB6: Corresponding programs for load/store sequence in Figure 1. 
+* QB6: <font color="red"> Corresponding programs for load/store sequence in Figure 1. <\font>
 
 
  
-* QB8: "mostly"..
+* QB8: <font color="red"> "mostly"..
 
 * QB9: Reverse only happens at XSpec->X?
 
@@ -64,7 +66,7 @@ As acknowledged by other reviewers, the difference is very clear.
 
 * QB11: How exactly does CleanupSpec violate Property 3?
 
-See revised Section XXX.
+See revised Section 3.3, CleanupSpec.
 
 * QB12: "commit despite invalidation", Peekaboo or RC?
 
@@ -82,15 +84,15 @@ If Core 1 prefetch A, but the line is invalidated before load A is performed, pe
 
 We currently do not have a measurement for power overhead but the extra coherence traffic can contribute to that. Thus the traffic results can provide some indirect clue. 
 
-Regarding area, the main overhead is due to speculative buffer, similar to InvisiSpec except the counting bloom filter. We provide the summary of the overhead in Table XXX. 
+Regarding area, the main overhead is due to speculative buffer, similar to InvisiSpec except the counting bloom filter. 
 
 * QC2: More Parsec benchmark?
 
-We made an effort to run XX more program, the results are included in Figure XX. 
+We made an effort to run more program for both SPEC and PARSEC. Unfortunately, some of the benchmarks will compile systemcalls that could not be recognized by gem5 simulator. We add new results for SPEC2017, but we do not get more result for PARSEC at this moment.  
 
 * QC3: Source of performance improvement, cycle breakdown. 
 
-We added the results and analysis in Section XXX. 
+We added the results and analysis in Section 7.2. 
 
 # Rev-D
 
@@ -112,39 +114,41 @@ At this point, all existing approaches try to ensure the equivalence we formaliz
 
 If can be done, it would be very nice. But we haven't figured out how to do it. 
 
-* QD3: Extension of proof based on two instructions to any number of instructions. 
+* QD3: <font color="red"> Extension of proof based on two instructions to any number of instructions. <\font>
 
 * QD4: RCP based on RC. 
+
+We evaluated the SPEC2017 benchmark under RC to show that our design is compatible with different memory consistency models. 
 
 # Rev-E
 
 * QE1: Attacks based on network bandwidth usage?
 
-\rev{For example, with bounded NoC bandwidth,
+For example, with bounded NoC bandwidth,
  more traffic in NoC may increase the response
 latency due to queuing. This paper assumes that
 the attackers cannot sense such difference. 
-In fact, it is the assumption of {\em all} existing solutions. 
+In fact, it is the assumption of  all existing solutions. 
 Our results on InvisiSpec and CleanupSpec indicate that
 both solutions incur extra coherence traffic. 
 %InvisiSpec incurs more traffic due to redo of speculative loads---just slightly lower than \projectname. 
 To the best of our knowledge,
 no speculative execution based attacks have been demonstrated
-by leveraging latency increase due to NoC contention. }
+by leveraging latency increase due to NoC contention. 
 
-* QE2: Speculative buffer size and its implication on performance?
+* <font color="red">QE2: Speculative buffer size and its implication on performance?<\font>
 
 
 # Rev-F
 
 
-* QF1: Further analysis on the "speedups"?
+* <font color="red"> QF1: Further analysis on the "speedups"?<\font>
 
 * QF2: Why CleanUP suffers from 4x more slowdown in Parsec than SPEC?
 
-We used their original code, so it is not a part of our implementation. But we looked into the execution and find ...
+We used their original code, so it is not a part of our implementation. But we looked into the execution and find that the extremely overhead is caused by the high mis prediction rate of that program. Higher misprediction rate will cause more cleanup operations and thus incur more stalls in the processor. 
 
 * QF3: 5% slowdown with random replacement, really?
-
+We admit this is part of our mistake. We test random and lru replacement on CleanupSpec and find the slowdown is about 0.05% instead of 5%. We have removed the figure and statement for this slowdown. But the problem of CleanupSpec still exist, detail explained in Section 3.3. 
 
 
