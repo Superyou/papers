@@ -144,6 +144,13 @@ by leveraging latency increase due to NoC contention.
 
 * **QF1: Further analysis on the "speedups"?**
 
+By analyzing the results, we could observe there exists speedups for some of the benchmarks.  
+Our understanding is that the existence of speculative buffer give the speculative load a opportunity to hit in the speculative buffer and return with the speculative data.
+With the help of the SpecBuf, RCP and IS increases the hit rate for speculative loads in the simulator statistic, which   
+leads to slight performance improvement of some benchmarks.
+For bechmark vips and freq, RCP  gets distinct speedup compared to InvisiSpec and CleanupSpec. This is because both InvisiSpec and CleanupSpec have their slowdowns counteract these speedups. The higher misprediction rates in these programs will cause more cleanup operations in CleanupSpec and the correct predictions will lead to double-access in InvisiSpec. Instead, RCP will do merge and purge operations in parallel with the program execution, introducing negligible overheads for memory stalls, thus will not cause obvious slowdown and benefit from the spec hit rates. }
+
+
 * QF2: Why CleanUP suffers from 4x more slowdown in Parsec than SPEC?
 
 We used their original code, so it is not a part of our implementation. But we looked into the execution and find that the extremely overhead is caused by the high mis prediction rate of that program. Higher misprediction rate will cause more cleanup operations and thus incur more stalls in the processor. 
