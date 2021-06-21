@@ -100,6 +100,14 @@ Good question. Indeed, the execution can be non-deterministic. But the recent at
 
 As you suggested, it might be possible for two inequivalent executions to be both safe (not vulnerable to such attacks), but it is unclear how and whether it is possible to design such a solution. So far, all existing approaches try to ensure the equivalence as the goal, no matter whether the designs indeed achieve it. As we analyzed in the paper, only InvisiSpec achieves it. 
 
+\rev{{\em Rationale for maintaining equivalent behavior. }
+The properties ensure the equivalence because 
+recent attacks such as Spectre~\cite{} is due to the {\em inequivalent} cache states and cache block locations between two scenarios: (1) a $SpecRd$ is executed and squashed; and (2) the $SpecRd$ does not execute. 
+Therefore, maintaining the equivalence between (1) and (2) is an
+intuitive way to mitigate such attacks. 
+It might be possible for two inequivalent executions to be both not vulnerable to such attacks, but it is unclear how and whether it is possible to design such a solution.
+At this point, all existing approaches try to ensure the equivalence we formalized as the goal. }
+
 * QD2: Verifying security property automatically?
 
 If can be done, it would be very nice. But we haven't figured out how to do it. 
@@ -111,6 +119,18 @@ If can be done, it would be very nice. But we haven't figured out how to do it.
 # Rev-E
 
 * QE1: Attacks based on network bandwidth usage?
+
+\rev{For example, with bounded NoC bandwidth,
+ more traffic in NoC may increase the response
+latency due to queuing. This paper assumes that
+the attackers cannot sense such difference. 
+In fact, it is the assumption of {\em all} existing solutions. 
+Our results on InvisiSpec and CleanupSpec indicate that
+both solutions incur extra coherence traffic. 
+%InvisiSpec incurs more traffic due to redo of speculative loads---just slightly lower than \projectname. 
+To the best of our knowledge,
+no speculative execution based attacks have been demonstrated
+by leveraging latency increase due to NoC contention. }
 
 * QE2: Speculative buffer size and its implication on performance?
 
