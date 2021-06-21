@@ -33,9 +33,8 @@ Thank you for the detailed comments, in retrospect, we indeed provided too much 
 
 * QB1: SpectrePrime/MeltdownPrime. 
 
-Our design can defend these two attacks.
-
-SpectrePrime and MeltdownPrime are side-channel attacks synthesized by the Checkmate tool. Different from the well-known Spectre/ Meltdown attaks, SpectrePrime/MeltdownPrime exploits Prime and Probe timing channel to steal secrets. Admittedly, SpectrePrime/MeltdownPrime broadens the scope of speculative transient attacks, but RCP could still defend these. The key point is that RCP satisfy the formal security property, which will prevent any speculative loads from modifying the cache. After the cache is primed by the attacker and the speculative instructions eventually get squashed, the Specbuf will purge itself but no eviction will be appear in the primed cache lines. Thus the probe phase could know nothing from the speculative execution.
+SpectrePrime and MeltdownPrime are side-channel attacks synthesized by the Checkmate tool. Different from the well-known Spectre/ Meltdown attaks, SpectrePrime/MeltdownPrime exploits Prime and Probe timing channel to steal secrets. These attacks exploits the speculative write access to invalidate the remote core's copy. But in our threat model, speculative write will not be possible because all the write access will be buffered in the StoreQueue. They will not be issued to memory until commit in the correct path. 
+Thus SpectrePrime and MeltdownPrime is out of scope in our threat model. 
 
 * QB2: **Speculative load changes other lines?**
 
