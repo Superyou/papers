@@ -145,7 +145,7 @@ He mentioned this without evidence, we have to think. If indeed no evidence, we 
 
 I think he mentioned this as weakness with no evidence. Better to ask him to provide more details. 
 
-* **QD:  Important to block speculative transmission of non-speculatively accessed secrets
+* **QD:  Important to block speculative transmission of non-speculatively accessed secrets?**
 
 Actually we shared the similar threat model with Dolma. A secret value could be accessed by a non-speculative instruction and store into a register before the start of the speculation. 
 
