@@ -161,11 +161,13 @@ score: B
 
 * **QE2: MuonTrap's L0 optimization?**
 
-TODO
+Muontrap's MSI protocol may not have the problem pointed out in Figure1(d). But first of all, the downgraded MSI coherence protocol will slowdown 
+the performance. At the same time, Muontrap still need to stall when accessing remote M (in Fig1(f)), which could be avoided by RCP. 
+
 
 * **QE3: How does L1 keep load order?**
 
-No need?
+
 There is no need to track the order information since the location of an instruction in LSQ can directly reveal this. To complete a local purge, the L1SpecBuf will clear all the entries starting from the recived instruction to the tail.
 
 * **QE4: How large is specBuf in Fig2?**
@@ -176,9 +178,8 @@ In our evaluations, 2x4x32x(64B+1B+1B) =  16.5MB
 
 * **QE5: constant CBF check time?**
 
-Search some document and give a time, as if you modeled this in the simulator. ]
 
-TODO
+It is an assumption that we made because we do not want the check time to be part of the side channel. 
 
 
 * **QE6: L2: how to get the #of spec core?**
@@ -216,12 +217,26 @@ score: C (Dmitry Ponomarev)
 
 * **QG1: Impact on the directory structure?**
 
+We also made corresponding changes in directory to support the speculative states in cache hiearchy. We did not show all the details 
+because of the limit on pages. 
+
+
 * **QG2: Size of CBF?**
+
+The size of the L2SpecBuf is about (# o f cores)×(# o f LQ entries) x (# of size of each entry) which is around 8MB in our setting. 
+The overhead of CBF are mainly due to the hash number, which is negligible compared with the size of L2SpecBuf. 
+
 
 * **QG3: Branch predictor?**
 
+We use the default Tournament Predictor in gem5. We can also change it into bi_model or 2-bit predictor in the setting but the results are indeed different. 
+
+
 * **QG4: Why CleanupSpec performs poorly on "facesim"?**
 
+It is indeed a weird data point. The performance of CleanupSpec is highly relied on the misprediction rates and we found that the misprediction rate 
+of facesim is  about 0.8%, the highest among other benchmarks. Another resonable guess is the concurrent speedup operation among different
+cores incurs consecutive stalls during the execution. 
 
 
 
