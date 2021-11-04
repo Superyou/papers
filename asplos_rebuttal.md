@@ -183,20 +183,25 @@ TODO
 
 * **QE6: L2: how to get the #of spec core?**
 
-Briefly describe. 
+It could be easily down by using CBF structure. We could check all the entries in L2SpecBuf to get this counter since every speculative instructions are recorded here. Please refer to Section 4.2.  
+
+
 
 * **QE7: RISC-V or IBM Power MCM?**
 
-The main feature of these models is the non-atomic writes, which we discussed in XXX.
+The main feature of these models is the non-atomic writes, which we discussed in Section 6, at the bottom of page 9.
 
 # Rev-F
 score: C (Don't understand much)
 
 * **QF1: Comment on NDA?**
 
+We indeed included the discussion about NDA and cited in the paper. At a high level, NDA has the similar idea to STT. But since NDA does not have an open-source implementation, we just evaluate STT-futuristic during evaluation. 
+
+
 * **QF2: Why RCP needs specBuf?**
 
-Keep speculative value: we may miss in L1/L2 cache. Also replay the replacement, etc. Point to the section. 
+Keep speculative value: we may miss in L1/L2 cache. Also replay the replacement, etc. Section 4.3 describes how we complete memory operations in all cases along with the SpecBuf structure.
 
 * **QF3: Why not run multithreaded version of SPEC17?**
 
